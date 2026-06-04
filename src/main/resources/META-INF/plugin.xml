@@ -79,6 +79,9 @@
 
     <!-- LSP -->
     <platform.lsp.serverSupportProvider implementation="jp.s6n.idea.typespec.lsp.TypeSpecLspServerSupportProvider" />
+
+    <!-- Navigation -->
+    <gotoDeclarationHandler implementation="jp.s6n.idea.typespec.navigation.TypeSpecGotoDeclarationHandler" order="first" />
   </extensions>
 
   <actions>
