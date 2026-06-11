@@ -10,7 +10,6 @@ Sample TypeSpec files for verifying plugin features.
 | `navigation.tsp` | Go to Declaration — single-file baseline (Cmd+Click / Ctrl+Click) |
 | `folding.tsp` | Code folding (namespace / model / interface blocks) |
 | `structure.tsp` | Structure View (file outline) |
-| `lsp.tsp` | LSP features (completion, hover, diagnostics, `@doc`) |
 
 ### Cross-file navigation (`github/`)
 
@@ -24,7 +23,7 @@ A multi-file GitHub Issues API example for testing Go to Declaration across file
 
 ## Prerequisites
 
-LSP features (`lsp.tsp`) require `@typespec/compiler` to be installed:
+Go to Declaration (`github/`) requires `@typespec/compiler` to be installed:
 
 ```bash
 npm install
