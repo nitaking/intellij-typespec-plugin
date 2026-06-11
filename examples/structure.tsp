@@ -1,5 +1,5 @@
-// Structure View (ファイル構造ツリー) のテスト用
-// エディタ右側や Project ツールウィンドウでの構造表示を確認
+// Test file for Structure View (file outline)
+// Verify that the structure tree appears in the editor gutter and Project tool window
 
 import "@typespec/http";
 import "@typespec/rest";

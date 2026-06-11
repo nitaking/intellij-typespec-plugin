@@ -1,5 +1,5 @@
-// LSP 機能 (補完・ホバー・診断) のテスト用
-// typespec-language-server が起動していることが前提
+// Test file for LSP features (completion, hover, diagnostics)
+// Requires typespec-language-server to be running
 
 import "@typespec/http";
 
@@ -11,42 +11,42 @@ using TypeSpec.Http;
 })
 namespace LspTest;
 
-// 補完テスト: "@" を入力してデコレータ候補が出るか確認
-// ホバーテスト: 型名の上にカーソルを置いて説明が表示されるか確認
-// 診断テスト: 意図的なエラーを入れて赤下線が出るか確認
+// Completion test: type "@" and verify decorator candidates appear
+// Hover test: place cursor on a type name and verify the tooltip appears
+// Diagnostics test: introduce an intentional error and verify the red underline appears
 
 scalar Uuid extends string;
 
-@doc("ユーザーを表すモデル")
+@doc("A model representing a user")
 model User {
-  @doc("ユーザーの一意識別子")
+  @doc("Unique identifier for the user")
   id: Uuid;
 
-  @doc("表示名")
+  @doc("Display name")
   @minLength(1)
   @maxLength(100)
   name: string;
 
-  @doc("メールアドレス")
+  @doc("Email address")
   @format("email")
   email: string;
 
-  @doc("作成日時")
+  @doc("Creation timestamp")
   createdAt: utcDateTime;
 }
 
 @route("/users")
 @tag("Users")
 interface Users {
-  @summary("ユーザー一覧取得")
+  @summary("List users")
   @get list(
     @query skip?: int32,
     @query top?: int32,
   ): User[];
 
-  @summary("ユーザー取得")
+  @summary("Get a user")
   @get read(@path id: Uuid): User;
 
-  @summary("ユーザー作成")
+  @summary("Create a user")
   @post create(@body body: Omit<User, "id" | "createdAt">): User;
 }

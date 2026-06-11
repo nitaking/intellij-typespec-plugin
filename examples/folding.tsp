@@ -1,5 +1,5 @@
-// コードフォールディングのテスト用
-// namespace / model / interface / op ブロックが折りたためることを確認
+// Test file for code folding
+// Verify that namespace / model / interface / op blocks can be collapsed
 
 namespace Folding {
   namespace Inner {

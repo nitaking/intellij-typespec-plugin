@@ -1,5 +1,5 @@
-// Go to Declaration のテスト用
-// 各シンボルで Cmd+Click / Ctrl+Click して宣言にジャンプできることを確認
+// Test file for Go to Declaration
+// Cmd+Click / Ctrl+Click on each symbol to verify navigation to its declaration
 
 namespace Navigation;
 
@@ -13,12 +13,12 @@ model User {
   id: int32;
   name: string;
   email: string;
-  address: Address; // Address にジャンプできるか確認
+  address: Address; // verify jump to Address
 }
 
 model Order {
   id: int32;
-  user: User;       // User にジャンプできるか確認
+  user: User;       // verify jump to User
   items: OrderItem[];
   total: float32;
 }
@@ -29,8 +29,8 @@ model OrderItem {
   price: float32;
 }
 
-alias UserId = int32;   // エイリアスへのジャンプ確認
+alias UserId = int32;   // verify jump to alias
 
-model AdminUser extends User {  // User 継承でジャンプ確認
+model AdminUser extends User {  // verify jump via extends
   role: "admin" | "superadmin";
 }

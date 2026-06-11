@@ -1,27 +1,27 @@
 # Examples
 
-プラグインの動作確認用サンプルファイル集です。
+Sample TypeSpec files for verifying plugin features.
 
-## ファイル一覧
+## Files
 
-| ファイル | 確認できる機能 |
-|---|---|
-| `basic.tsp` | シンタックスハイライト、基本的な TypeSpec 構文 |
+| File | Feature |
+|------|---------|
+| `basic.tsp` | Syntax highlighting, basic TypeSpec syntax |
 | `navigation.tsp` | Go to Declaration (Cmd+Click / Ctrl+Click) |
-| `folding.tsp` | コードフォールディング (namespace / model / interface ブロック) |
-| `structure.tsp` | Structure View (ファイル構造ツリー) |
-| `lsp.tsp` | LSP 機能 (補完・ホバー・診断・`@doc` 表示) |
+| `folding.tsp` | Code folding (namespace / model / interface blocks) |
+| `structure.tsp` | Structure View (file outline) |
+| `lsp.tsp` | LSP features (completion, hover, diagnostics, `@doc`) |
 
-## 前提条件
+## Prerequisites
 
-LSP 機能 (`lsp.tsp`) を確認するには `@typespec/compiler` がインストールされている必要があります。
+LSP features (`lsp.tsp`) require `@typespec/compiler` to be installed:
 
 ```bash
-npm install -g @typespec/compiler
+npm install
 ```
 
-## 使い方
+## Usage
 
-1. IntelliJ IDEA でプラグインをビルド・起動 (`./gradlew runIde`)
-2. `examples/` ディレクトリを開く
-3. 各ファイルを開いて該当機能を確認
+1. Build and launch the plugin: `mise run run`
+2. Open the `examples/` directory as a project
+3. Open each file and verify the corresponding feature
